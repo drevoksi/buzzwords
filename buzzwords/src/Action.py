@@ -1,7 +1,7 @@
 from flask import Flask, request
 from BuzzStatement import BuzzStatement
 
-app = Flask(__file__)
+app = Flask(__name__)
 buzz = BuzzStatement()
 file_path = "/tmp/file.pdf"
 
