@@ -41,5 +41,5 @@ class BuzzStatement:
                 """ + text_statement
         return self.response(prompt)
 
-buzz = BuzzStatement()
-print(buzz.get_buzz_statement("example_statement.pdf"))
+# buzz = BuzzStatement()
+# print(buzz.get_buzz_statement("example_statement.pdf"))
