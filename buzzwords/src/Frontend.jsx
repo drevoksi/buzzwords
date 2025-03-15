@@ -3,9 +3,13 @@ import './Frontend.css'
 
 export default function Frontend() {
     const [text, setText] = useState("");
+    let file = null;
 
-    const handleFileChange = async (event) => {
-        const file = event.target.files[0];
+    const setFile = (event) => {
+        file = event.target.files[0];
+    }
+
+    const handleFileChange = async () => {
         if (!file) return;
 
         const formData = new FormData();
@@ -28,10 +32,8 @@ export default function Frontend() {
   return (
     <div>
         <h1>Buzz Statement</h1>
-        <form action="" method="POST">
-            <input type="file" accept="application/pdf" onChange={handleFileChange}/>
-            <button>Submit</button>
-        </form>
+        <input type="file" accept="application/pdf" onChange={setFile}/>
+        <button onClick={handleFileChange}>Submit</button>
         <p>{text}</p>
     </div>
   );
