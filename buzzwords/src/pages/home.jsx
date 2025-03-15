@@ -30,8 +30,8 @@ export function Home() {
             }
       };
     
-        const makeSubway = async () => {
-                
+        const showText = () => {
+            document.getElementById("first").style.display = 'block';
         }
     
       return (
@@ -42,7 +42,9 @@ export function Home() {
             <p>{text}</p>
             {/* Add the simplify button if there is text in the paragraph */}
         
-            {text && <a href><button onClick={() => alert('Button clicked!')}>Simplify it</button></a>}
+            {text && <button onClick="showSubway">Simplify it</button>}
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DUag7K6te8s?si=GQ-VVWPKpUgQGe3E&amp;controls=0&amp;start=224" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       );
 }
