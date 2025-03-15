@@ -8,6 +8,7 @@ class BuzzStatement:
             api_key = os.environ.get("OPENAI_API_KEY"),
             max_retries = 0
         )
+    
     def response(self, prompt):
         completion = self.client.chat.completions.create(
             messages=[
