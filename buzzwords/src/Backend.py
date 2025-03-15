@@ -1,13 +1,17 @@
 from flask_cors import CORS
-from BuzzStatement import BuzzStatement
 from flask import Flask, request, jsonify
 import os
 import sys
 import tempfile
 
+from BuzzStatement import BuzzStatement
+from TTS import TTS
+
 app = Flask(__name__)
 CORS(app, origins="http://localhost:5173")
+
 bs = BuzzStatement()
+tts = TTS()
 
 def process_pdf(file_path):
     return bs.get_buzz_statement(file_path)
@@ -37,6 +41,22 @@ def upload_file():
         os.unlink(temp_file.name)
 
     response = jsonify({'text': extracted_text})
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:5173'
+    return response
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+@app.route('/tts', methods=['POST'])
+def tts_path():
+    if 'text' not in request.form:
+        return jsonify({'error': 'No text given'}), 400
+    
+    text = request.form['text']
+    
+    path = TTS.save_speech(text)
+
+    response = jsonify({'path': path})
     response.headers['Access-Control-Allow-Origin'] = 'http://localhost:5173'
     return response
 
