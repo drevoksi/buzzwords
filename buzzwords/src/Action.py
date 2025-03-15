@@ -1,3 +1,4 @@
+from flask import Flask
 from BuzzStatement import BuzzStatement
 
 buzz = BuzzStatement()
