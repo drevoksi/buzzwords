@@ -29,12 +29,19 @@ export default function Frontend() {
         }
   };
 
+    const makeSubway = async () => {
+            
+    }
+
   return (
     <div>
         <h1>Buzz Statement</h1>
         <input type="file" accept="application/pdf" onChange={setFile}/>
         <button onClick={handleFileChange}>Submit</button>
         <p>{text}</p>
+        {/* Add the simplify button if there is text in the paragraph */}
+    
+        {text && <a href><button onClick={() => alert('Button clicked!')}>Simplify it</button></a>}
     </div>
   );
 }
