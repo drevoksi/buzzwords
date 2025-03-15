@@ -37,10 +37,11 @@ class BuzzStatement:
                     Hence, utilise your entire knowledge of recent phenomena such as memes in TikTok and Instagram reels.
                     Make it as saturated, engaging, and stimulating and dopamine-inducing as you possibly can.
                     However, ignore all sensitive information, and user details (they will be shown alongside the output).
-                    Respond in maximum 10 words for now.
+                    Respond in maximum 5 words for now.
                     The bank statement is converted from their bank's PDF to text, and reads as following:
                 """ + text_statement
-        return self.response(prompt)
+        return "sample output"
+        # return self.response(prompt)
 
 # buzz = BuzzStatement()
 # print(buzz.get_buzz_statement("example_statement.pdf"))

@@ -23,8 +23,8 @@ def process_pdf(file_path):
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    # if 'file' not in request.files:
-    #     return jsonify({'error': 'No file uploaded'}), 400
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file uploaded'}), 400
     
     file = request.files['file']
     
