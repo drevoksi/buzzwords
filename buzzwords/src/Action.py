@@ -1,8 +1,14 @@
-from flask import Flask
+from flask import Flask, request
 from BuzzStatement import BuzzStatement
 
+app = Flask(__file__)
 buzz = BuzzStatement()
+file_path = "/tmp/file.pdf"
 
-@app.route('/get-buzz-statement',methods=['POST'])
-def get_buzz_statement(file_path):
-    buzz.get_buzz_statement(file_path)
+@app.route('/upload',methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save(file_path)
+        # buzz.get_buzz_statement(file_path)
+        print('Something something')
