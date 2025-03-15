@@ -14,7 +14,7 @@ function App() {
       
       {/* TODO: Add the file uploading option */}
       <div>
-        <form action="/program.py" method="post" enctype="multipart/form-data">
+        <form class="userinput" action="/Action.py" method="GET">
           <input type="file" name="pdfFile" multiple></input>
           <button type="submit">Upload</button>
         </form>
