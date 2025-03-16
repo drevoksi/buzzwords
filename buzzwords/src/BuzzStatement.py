@@ -50,19 +50,12 @@ class BuzzStatement:
                     - All of the above is "brainrot"
                     Assume they are familiar with the memes and understand subtle references, do not specify 'instagram' or 'tiktok', do not be descriptive and mention memes as in casual conversation
                     The task is to describe the statement in a crazy way, do not print the table
-                    Greatly overuse them and exaggerate, always state facts indirectly through memes
+                    Greatly overuse them and exaggerate, always state facts indirectly through memes, do not output the table
 
-                    Do not output the table
-                    Output format: {
-                    Balance: [Sentence - two of description]
-                    [Fun description of the statement about 10 sentences and points as appropriate]
-                    }
-
-                    Respond in maximum 5 words for now.
+                    Respond in maximum 10 words for now.
                     The bank statement is converted from their bank's PDF to text, and reads as following:
                 """ + text_statement
-        return "sample output"
-        # return self.response(prompt)
+        return self.response(prompt)
 
 # buzz = BuzzStatement()
 # print(buzz.get_buzz_statement("example_statement.pdf"))
