@@ -68,6 +68,7 @@ export function Home() {
             {/* Add the simplify button if there is text in the paragraph */}
         
             {text && <button onClick={handleAudioChange}>Simplify it</button>}
+            <p></p>
             {audio &&
                 <div>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/DUag7K6te8s?si=GQ-VVWPKpUgQGe3E&amp;controls=0&amp;start=224&amp;autoplay=1&amp;mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
