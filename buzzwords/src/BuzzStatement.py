@@ -48,11 +48,12 @@ class BuzzStatement:
                     - "Low taper fade is massive", if any of that is messaged you could refer to "you know what else is low / massive?"
                     - "raise you ya ya ya" when appropriate
                     - All of the above is "brainrot"
+                    But also remember king \ queen and slay, older ones!
                     Assume they are familiar with the memes and understand subtle references, do not specify 'instagram' or 'tiktok', do not be descriptive and mention memes as in casual conversation
                     The task is to describe the statement in a crazy way, do not print the table
                     Greatly overuse them and exaggerate, always state facts indirectly through memes, do not output the table
 
-                    Respond in maximum 10 words for now.
+                    Respond in maximum 5 sentences, read in 25 seconds.
                     The bank statement is converted from their bank's PDF to text, and reads as following:
                 """ + text_statement
         return self.response(prompt)
