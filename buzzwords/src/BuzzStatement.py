@@ -55,7 +55,8 @@ class BuzzStatement:
                     Respond in maximum 10 words for now.
                     The bank statement is converted from their bank's PDF to text, and reads as following:
                 """ + text_statement
-        return self.response(prompt)
+        # return self.response(prompt)
+        return "sample output"
 
 # buzz = BuzzStatement()
 # print(buzz.get_buzz_statement("example_statement.pdf"))

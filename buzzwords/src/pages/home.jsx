@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import '../Frontend.css'
 
 export function Home() {
     
         const [text, setText] = useState("");
         const [audio, setAudio] = useState(null);
+        
         let file = null;
     
         const setFile = (event) => {
@@ -54,15 +55,15 @@ export function Home() {
             }
         };
     
-        const showText = () => {
-            document.getElementById("first").style.display = 'block';
-        }
-    
       return (
         <div>
-            <h1>Buzz Statement</h1>
-            <input type="file" accept="application/pdf" onChange={setFile}/>
-            <button onClick={handleFileChange}>Submit</button>
+            <img src='../public/subwayLogo.png' alt="Buzz Statement logo" class="floating"/>
+            <h1><span class="buzz">Buzz</span> Statement</h1>
+
+            <div class="fileSelector">
+                <input type="file" accept="application/pdf" onChange={setFile}/>
+                <button onClick={handleFileChange}>Submit</button>
+            </div>
             <p>{text}</p>
 
             {/* Add the simplify button if there is text in the paragraph */}
@@ -70,7 +71,7 @@ export function Home() {
             {text && <button onClick={handleAudioChange}>Simplify it</button>}
             <p></p>
             {audio &&
-                <div>
+                <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/DUag7K6te8s?si=GQ-VVWPKpUgQGe3E&amp;controls=0&amp;start=224&amp;autoplay=1&amp;mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             }
