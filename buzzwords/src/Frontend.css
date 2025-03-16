@@ -40,9 +40,8 @@ img {
 }
 
 .video-container {
-  width: 315px;    /* Swapped width to 315px */
+  width: 273px;    /* Swapped width to 315px */
   height: 560px;   /* Swapped height to 560px */
-  overflow: hidden; /* Hide parts outside the container */
   position: relative; /* Relative position for absolute iframe */
   margin: 0 auto;  /* Optional: center the video container */
   border-radius: 20px;
@@ -52,8 +51,9 @@ img {
   position: absolute;
   top: 0;      /* Keep the iframe aligned to the top */
   left: 0;     /* Keep it aligned to the left */
-  width: 315px; /* Set fixed width to 315px */
-  height: 560px; /* Set fixed height to 560px */
+  width: 100%; /* Set fixed width to 315px */
+  height: 100%; /* Set fixed height to 560px */
+  border-radius: 20px;
 }
 
 .buzz {

@@ -5,7 +5,7 @@ export function Home() {
     
         const [text, setText] = useState("");
         const [audio, setAudio] = useState(null);
-        
+
         let file = null;
     
         const setFile = (event) => {
@@ -68,11 +68,11 @@ export function Home() {
 
             {/* Add the simplify button if there is text in the paragraph */}
         
-            {text && <button onClick={handleAudioChange}>Simplify it</button>}
+            {text && <button onClick={handleAudioChange}>Too Difficult!</button>}
             <p></p>
             {audio &&
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DUag7K6te8s?si=GQ-VVWPKpUgQGe3E&amp;controls=0&amp;start=224&amp;autoplay=1&amp;mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MTLM8wgscaM?si=zZgJnWAw2RqePVWD&amp;controls=0&amp;start=12&amp;autoplay=1&amp;mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             }
         </div>
