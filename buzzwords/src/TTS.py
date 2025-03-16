@@ -20,9 +20,11 @@ class TTS:
         response = requests.post('https://api.sws.speechify.com/v1/audio/speech', headers=headers, json=json_data).json()
         mp3_bytes = b64decode(response["audio_data"])
 
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_file:
-            temp_file.write(mp3_bytes)
-            return temp_file.name
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
+        temp_file.write(mp3_bytes)
+        temp_file.close()
+        
+        return temp_file.name
 
 # Note: json_data will not be serialized by requests
 # exactly as it was in the original request.

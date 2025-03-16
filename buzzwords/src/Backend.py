@@ -44,8 +44,6 @@ def upload_file():
     response.headers['Access-Control-Allow-Origin'] = 'http://localhost:5173'
     return response
 
-if __name__ == '__main__':
-    app.run(debug=True)
 
 @app.route('/tts', methods=['POST'])
 def tts_path():
@@ -54,7 +52,7 @@ def tts_path():
     
     text = request.form['text']
     
-    path = TTS.save_speech(text)
+    path = tts.save_speech(text)
 
     response = jsonify({'path': path})
     response.headers['Access-Control-Allow-Origin'] = 'http://localhost:5173'
