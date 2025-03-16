@@ -4,7 +4,7 @@ import '../Frontend.css'
 export function Home() {
     
         const [text, setText] = useState("");
-        const [mp3_file, setMp3File] = useState(null);
+        const [audio, setAudio] = useState(null);
         let file = null;
     
         const setFile = (event) => {
@@ -23,8 +23,11 @@ export function Home() {
                     body: formData,
                     mode: "cors"
                 });
-                const data = await response.json();
-                setMp3File(await data.path);
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const audio = new Audio(url)
+                setAudio(audio);
+                await audio.play();
             } catch (error) {
                 console.log(error);
                 setText("Error processing text to speech");
@@ -65,11 +68,8 @@ export function Home() {
             {/* Add the simplify button if there is text in the paragraph */}
         
             {text && <button onClick={handleMp3FileChange}>Simplify it</button>}
-            {mp3_file && 
+            {audio &&
                 <div>
-                    <audio controls autoplay loop>
-                        <source src={mp3_file} type="audio/mpeg"/>
-                    </audio>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/DUag7K6te8s?si=GQ-VVWPKpUgQGe3E&amp;controls=0&amp;start=224" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             }

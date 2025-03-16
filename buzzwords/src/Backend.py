@@ -1,5 +1,5 @@
 from flask_cors import CORS
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 import os
 import sys
 import tempfile
@@ -54,9 +54,7 @@ def tts_path():
     
     path = tts.save_speech(text)
 
-    response = jsonify({'path': path})
-    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:5173'
-    return response
+    return send_file(path, mimetype='audio/mp3', as_attachment=False)
 
 if __name__ == '__main__':
     app.run(debug=True)
