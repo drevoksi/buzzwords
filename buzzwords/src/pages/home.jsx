@@ -57,7 +57,7 @@ export function Home() {
     
       return (
         <div>
-            <img src='../public/subwayLogo.png' alt="Buzz Statement logo" class="floating"/>
+            <img src='../subwayLogo.png' alt="Buzz Statement logo" class="floating"/>
             <h1><span class="buzz">Buzz</span> Statement</h1>
 
             <div class="fileSelector">
